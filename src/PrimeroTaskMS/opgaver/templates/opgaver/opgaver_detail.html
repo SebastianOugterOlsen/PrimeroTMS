@@ -25,7 +25,7 @@
 
     <p class="col-2 border rounded p-2 my-0 text-center" >{{ object.kunde_navn }}</p>
     <div class="col-1 border rounded p-0 my-0 text-center " >
-        {% if object.ansvarlig == "5" %} <p class=" text-primary p-2 my-0 ">SO</p>
+        {%   if object.ansvarlig == "5" %} <p class=" text-primary p-2 my-0 ">SO</p>
         {% elif object.ansvarlig == "2" %} <p class=" text-primary p-2 my-0 ">LM</p>
         {% elif object.ansvarlig == "4" %} <p class=" text-primary p-2 my-0 ">AB</p>
         {% elif object.ansvarlig == "3" %} <p class=" text-primary p-2 my-0 ">MB</p>
@@ -33,22 +33,22 @@
         {% endif %}
     </div>
     <button class="col-2 border p-2 my-0  btn btn-outline-dark" href="#" data-toggle="popover" data-trigger="hover" data-content="{% if object.opgave_beskrivelse %}{{ object.opgave_beskrivelse }}{% else %}Beskrivelse mangler{% endif %}" >{% if object.opgave_beskrivelse %}{{ object.opgave_beskrivelse|truncatechars:"20"}}{% else %}Beskrivelse mangler{% endif %}</button>
-    <button class="col-2 border p-2 my-0  btn btn-outline-dark" href="#" data-toggle="popover" data-trigger="hover" data-content="{% if object.opgave_noter %}{{ object.opgave_noter }}{% else %}Ingen noter{% endif %}" >{% if object.opgave_noter %}{{ object.opgave_noter|truncatechars:"20"}}{% else %}Ingen noter{% endif %}</button>
+    <button class="col-2 border p-2 my-0  btn btn-outline-dark" href="#" data-toggle="popover" data-trigger="hover" data-content="{% if object.opgave_noter %}      {{ object.opgave_noter }}      {% else %}Ingen noter        {% endif %}" >{% if object.opgave_noter %}      {{ object.opgave_noter|truncatechars:"20"}}      {% else %}Ingen noter        {% endif %}</button>
     <p class="col-1 border rounded p-2 my-0 text-center" >{{ object.tid_brugt }} t</p>
     <div class="col-1 border rounded p-0 my-0 text-center " >
-        {% if object.status == "2" %} <p class="  p-2 my-0 text-warning">Startet</p>
-        {% elif object.status == "3" %} <p class="  p-2 my-0 text-info">Halvvejs</p>
-        {% elif object.status == "4" %} <p class="  p-2 my-0 text-info">Detaljer</p>
+        {%   if object.status == "2" %} <p class="  p-2 my-0 text-warning">Startet</p>
+        {% elif object.status == "3" %} <p class="  p-2 my-0 text-info"   >Halvvejs</p>
+        {% elif object.status == "4" %} <p class="  p-2 my-0 text-info"   >Detaljer</p>
         {% elif object.status == "5" %} <p class="  p-2 my-0 text-success">Færdig</p>
         {% else %} <p class=" p-2 my-0 text-danger" >Mangler</p>
         {% endif %}
     </div>
     <p class="col-2 border rounded p-2 my-0 text-center font-weight-bold" >{{ object.deadline }}</p>
     <div class="col-1 border rounded p-0 my-0 text-center " >
-        {% if object.prioritet == "1" %} <p class=" text-danger p-2 my-0 ">Høj</p>
+        {%   if object.prioritet == "1" %} <p class=" text-danger  p-2 my-0 ">Høj</p>
         {% elif object.prioritet == "2" %} <p class=" text-warning p-2 my-0 ">Mellem</p>
         {% elif object.prioritet == "3" %} <p class=" text-success p-2 my-0 ">Lav</p>
-        {% else %} <p>Ikke prioritert</p>
+        {% else %} <p>Ikke prioriteret</p>
         {% endif %}
     </div>
 

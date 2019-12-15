@@ -5,7 +5,7 @@ from .models import Opgaver
 from .forms import OpgaverForm
 
 def opgaver_create_view(request):
-    obj = Opgaver.objects.get()
+    obj = Opgaver.objects.get(id=1)
     form = OpgaverForm(request.POST or None)
     if form.is_valid():
         form.save()
