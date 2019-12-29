@@ -6,7 +6,7 @@ from .forms import OpgaverForm
 
 def opgaver_create_view(request):
     obj = Opgaver.objects.get(id=1)
-    form = OpgaverForm(request.POST or None)
+    form = OpgaverForm(request.POST)
     if form.is_valid():
         form.save()
         form = OpgaverForm()
