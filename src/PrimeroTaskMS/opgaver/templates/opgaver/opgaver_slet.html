@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row justify-content-center p-2 rounded bg-white border mt-5 " style="font-size:1.5vw">
+    <form class="col-4" action='.' method="'POST"> {% csrf_token %}
+        <h1 >Skal ( {{ object.kunde_navn }} ) slettes?</h1>
+        <p justify-content-center><input type='submit' value='JA'/> <a><button>NEJ</button></a></p>
+    </form>
+</div>
+
+{% endblock %}

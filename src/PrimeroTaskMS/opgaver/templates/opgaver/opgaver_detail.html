@@ -2,9 +2,11 @@
 
 {% block content %}
 
+<div class="row justify-content-center rounded bg-white border " style="font-size:1.5vw">
+   <a class="nav-link" style="color:#012a50" href="/opret_opgave">Opret opgave <img src="https://image.flaticon.com/icons/svg/1370/1370639.svg" width="20" height="20" ></a>
+</div>
 
-
-<div class="container p-4 p-md-5 rounded bg-white border mt-5"> <!-- Min container starter -->
+<div class="container  p-md-5 rounded bg-white border mt-5"> <!-- Min container starter -->
 
 <div class="row">
 
@@ -19,39 +21,39 @@
 
 </div>
 
-{% for object in object|slice:"10" %}
+{% for instance in object_list %}
 
-<div class="row py-0">
+    <div class="row py-0">
 
-    <p class="col-2 border rounded p-2 my-0 text-center" >{{ object.kunde_navn }}</p>
+    <div class="col-2 border p-2 my-0  btn btn-outline-dark"  data-toggle="popover" data-trigger="hover" data-content=" Kontaktperson: John Doe Tlf: 12345678 Mail: abc@mail.com " >{{ instance.kunde_navn }}</div>
     <div class="col-1 border rounded p-0 my-0 text-center " >
 
        <!--  {{ object.ansvarlig }}  TESTER at den henter rigtigt-->
 
-        {%   if object.ansvarlig == "5" %} <p class=" text-primary p-2 my-0 ">SO</p>
-        {% elif object.ansvarlig == "2" %} <p class=" text-primary p-2 my-0 ">LM</p>
-        {% elif object.ansvarlig == "4" %} <p class=" text-primary p-2 my-0 ">AB</p>
-        {% elif object.ansvarlig == "3" %} <p class=" text-primary p-2 my-0 ">MB</p>
+        {%   if instance.ansvarlig == "5" %} <p class=" text-primary p-2 my-0 ">SO</p>
+        {% elif instance.ansvarlig == "2" %} <p class=" text-primary p-2 my-0 ">LM</p>
+        {% elif instance.ansvarlig == "4" %} <p class=" text-primary p-2 my-0 ">AB</p>
+        {% elif instance.ansvarlig == "3" %} <p class=" text-primary p-2 my-0 ">MB</p>
         {% else %} <p class=" text-success p-2 my-0 " >Alle</p>
         {% endif %}
 
     </div>
-    <div class="col-2 border p-2 my-0  btn btn-outline-dark" href="#" data-toggle="popover" data-trigger="hover" data-content="{{ object.opgave_beskrivelse }}" >{% if object.opgave_beskrivelse %}{{ object.opgave_beskrivelse|truncatechars:"20"}}{% else %}Beskrivelse mangler{% endif %}</div>
-    <div class="col-2 border p-2 my-0  btn btn-outline-dark" href="#" data-toggle="popover" data-trigger="hover" data-content="{{ object.noter }}">              {% if object.noter %}             {{ object.noter|truncatechars:"20" }}            {% else %} Ingen noter       {% endif %}</div>
+    <div class="col-2 border p-2 my-0  btn btn-outline-dark" href="#" data-toggle="popover" data-trigger="hover" data-content="{{ object.opgave_beskrivelse }}" >{% if instance.opgave_beskrivelse %}{{ instance.opgave_beskrivelse|truncatechars:"20"}}{% else %}Beskrivelse mangler{% endif %}</div>
+    <div class="col-2 border p-2 my-0  btn btn-outline-dark" href="#" data-toggle="popover" data-trigger="hover" data-content="{{ object.noter }}">              {% if instance.noter %}             {{ instance.noter|truncatechars:"20" }}            {% else %} Ingen noter       {% endif %}</div>
     <p class="col-1 border rounded p-2 my-0 text-center" >{{ object.tid_brugt }} t</p>
     <div class="col-1 border rounded p-0 my-0 text-center " >
-        {%   if object.status == "2" %} <p class="  p-2 my-0 text-warning">Startet</p>
-        {% elif object.status == "3" %} <p class="  p-2 my-0 text-info"   >Halvvejs</p>
-        {% elif object.status == "4" %} <p class="  p-2 my-0 text-info"   >Detaljer</p>
-        {% elif object.status == "5" %} <p class="  p-2 my-0 text-success">Færdig</p>
+        {%   if instance.status == "2" %} <p class="  p-2 my-0 text-warning">Startet</p>
+        {% elif instance.status == "3" %} <p class="  p-2 my-0 text-info"   >Halvvejs</p>
+        {% elif instance.status == "4" %} <p class="  p-2 my-0 text-info"   >Detaljer</p>
+        {% elif instance.status == "5" %} <p class="  p-2 my-0 text-success">Færdig</p>
         {% else %} <p class=" p-2 my-0 text-danger" >Mangler</p>
         {% endif %}
     </div>
-    <p class="col-2 border rounded p-2 my-0 text-center font-weight-bold" >{{ object.deadline }}</p>
+    <p class="col-2 border rounded p-2 my-0 text-center font-weight-bold" >{{ instance.deadline }}</p>
     <div class="col-1 border rounded p-0 my-0 text-center " >
-        {%   if object.prioritet == "1" %} <p class=" text-danger  p-2 my-0 ">Høj</p>
-        {% elif object.prioritet == "2" %} <p class=" text-warning p-2 my-0 ">Mellem</p>
-        {% elif object.prioritet == "3" %} <p class=" text-success p-2 my-0 ">Lav</p>
+        {%   if instance.prioritet == "1" %} <p class=" text-danger  p-2 my-0 ">Høj</p>
+        {% elif instance.prioritet == "2" %} <p class=" text-warning p-2 my-0 ">Mellem</p>
+        {% elif instance.prioritet == "3" %} <p class=" text-success p-2 my-0 ">Lav</p>
         {% else %} <p>Ikke prioriteret</p>
         {% endif %}
     </div>
@@ -60,7 +62,7 @@
 
 {% endfor %}
 
+
 </div> <!-- Min container slutter -->
 
 {% endblock %}
-

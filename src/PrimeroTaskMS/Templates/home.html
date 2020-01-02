@@ -1,32 +1,10 @@
 {% extends 'base.html' %}
 
-{%block content %}
-    <h1>Hello World</h1>
+{% block content %}
 
-    <p>This is a template</p>
+<div class="container p-4 p-md-5 rounded bg-white border mt-5"> <!-- Min container starter -->
 
-<p>
-    {{ my_text }}, {{ my_number }}
-    {{ my_list }}
-</p>
 
-<ul>
-    <li>item</li>
-    <li>item2</li>
-</ul>
-
-<ul>
-    {% for abc in my_list %}
-    {% if abc == 123 %}
-        <li> {{ forloop.counter }} - {{ abc|add:22 }}</li>
-    {% elif abc == "ABC" %}
-    <li>This is not the network</li>
-    {% else %}
-        <li> {{ forloop.counter }} - {{ my_sub_item }}</li>
-    {% endif %}
-
-    {% endfor %}
-</ul>
-
+</div> <!-- Min container slutter -->
 
 {% endblock %}

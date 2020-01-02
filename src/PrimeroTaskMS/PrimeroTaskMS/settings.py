@@ -39,9 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     #egen
-    'pages',    # Forside tror jeg kommenter senere
+
     'opgaver',  # min egen app
-    #'rest_framework', # Skal jeg åbenbart bruge til React yderligere kommentarer mangler
+    #'kunder',   # min egen app
+
 
 
 ]
@@ -126,5 +127,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-LOGIN_REDIRECT_URL = 'opgaver'
+LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
