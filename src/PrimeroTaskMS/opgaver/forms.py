@@ -17,8 +17,7 @@ class OpgaverForm(forms.ModelForm):
             'tid_brugt',
             'status',
             'deadline',
-            'prioritet',
-            'afsluttet'
+            'prioritet'
             ]
 
 class KunderForm(forms.ModelForm):
@@ -31,4 +30,4 @@ class KunderForm(forms.ModelForm):
             'kunde_adresse',
             'kontaktperson',
             'kontakt_tlf',
-            'kontakt_mail',]
+            'kontakt_mail']

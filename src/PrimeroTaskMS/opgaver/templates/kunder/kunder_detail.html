@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="row justify-content-center p-2 rounded bg-white border " style="font-size:1.5vw">
-   <a class="" style="color:#012a50" href="/opret_kunde">Opret kunde <img src="https://image.flaticon.com/icons/svg/1179/1179454.svg" width="20" height="20" > </a>
+   <a class="" style="color:#012a50" href="/kunder_opret">Opret kunde <img src="https://image.flaticon.com/icons/svg/1179/1179454.svg" width="20" height="20" > </a>
 </div>
 
 
@@ -26,6 +26,9 @@
     <div class="col-4 border p-2 my-0  btn btn-outline-dark" href="#" data-toggle="popover" data-trigger="hover" data-content="{{ instance.kunde_installation }}" >{% if instance.kunde_installation %}{{ instance.kunde_installation|truncatechars:"30"}}{% else %}Installation ikke beskrevet{% endif %}</div>
     <div class="col-4 border p-2 my-0  btn btn-outline-dark" href="#" data-toggle="popover" data-trigger="hover" data-content="{{ instance.kunde_adresse }}">{% if instance.kunde_adresse %}{{ instance.kunde_adresse|truncatechars:"30" }}{% else %} Adresse ikke angivet {% endif %}</div>
 </div>
+
+    <a style="color:#012a50" href="{% url 'rediger_kunde' instance.id %}">Rediger </a> <!-- Rediger -->
+    <a style="color:#012a50" href="{% url 'slet_kunde' instance.id %}">Slet </a> <!-- Slet -->
 
 {% endfor %}
 
