@@ -17,8 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.views.generic.base import TemplateView
 
-from opgaver.views import home_view
-from opgaver.views import opgaver_detail_view,  opgaver_opret_view, kunder_detail_view,  kunder_opret_view, opgaver_slet_view
+from opgaver.views import home_view, opgaver_detail_view,  opgaver_opret_view, kunder_detail_view,  kunder_opret_view, opgaver_slet_view
 
 urlpatterns = [
     path('', home_view, name='home'),
@@ -32,5 +31,4 @@ urlpatterns = [
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
 
     path('opgaver/<int:id>/delete/', opgaver_slet_view, name='opgaver-slet'),
-
 ]

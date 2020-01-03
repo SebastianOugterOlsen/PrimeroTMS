@@ -3,10 +3,10 @@
 <!-- login /logout starter -->
 {% if user.is_authenticated %}
                                                                             <!--  Hi {{ user.username }}! -->
-   <p class="mb-4" > <a class="text-white-50" href="{% url 'logout' %}" style='float:right'>Logout</a> </p>
+   <p class="mb-4" > <a class="text-white-50" href="{% url 'logout' %}" style='float:right'>Log ud</a> </p>
 {% else %}
                                                                          <!-- <p style='float:right' >You are not logged in</p> -->
-  <p class="mb-4" > <a class=" text-white-50" href="{% url 'login' %}"  style='float:right'>Login</a> </p>
+  <p class="mb-4" > <a class=" text-white-50" href="{% url 'login' %}"  style='float:right'>Log ind</a> </p>
 {% endif %}
 <!-- login /logout slutter -->
 
@@ -25,10 +25,10 @@
 
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 
-              <li class="nav-item active">
-                <a class="nav-link" style="color:#012a50" href="/">Start Side <img src="https://image.flaticon.com/icons/svg/1370/1370643.svg" width="20" height="20" >  <span class="sr-only">(current)</span></a>
+         <!--      <li class="nav-item active">
+                <a class="nav-link" style="color:#012a50" href="/">Startside <img src="https://image.flaticon.com/icons/svg/1370/1370643.svg" width="20" height="20" >  <span class="sr-only">(current)</span></a>
               </li>
-
+        -->
               <li class="nav-item active">
                 <a class="nav-link" style="color:#012a50" href="/kunder"> Kunder  <img src="https://image.flaticon.com/icons/svg/171/171561.svg" width="25" height="25" > </a>
               </li>
