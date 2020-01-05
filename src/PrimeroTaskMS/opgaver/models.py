@@ -3,8 +3,6 @@ from django.conf import settings
 from datetime import datetime
 from django.contrib.auth.models import User
 
-# Create your models here.
-
 
 
 class Opgaver(models.Model):
